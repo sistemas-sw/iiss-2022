@@ -113,7 +113,7 @@ Implementar usando aspectos el ejemplo del caso [Editor de Figuras](http://doder
 
 Implementar ejemplos de contratos, usando una librería disponible en el lenguaje de elección para programar contratos. Por ejemplo:
 
-- En Java, podría usarse bibliotecas específicas para programar contratos como [Contracts for Java](https://github.com/nhatminhle/cofoja), [Oval](https://sebthom.github.io/oval/USERGUIDE.html#programming-by-contract) o [Valid4J](http://www.valid4j.org/).
+- En Java, podría usarse bibliotecas específicas para programar contratos como [Contracts for Java](https://github.com/nhatminhle/cofoja) u [Oval](https://sebthom.github.io/oval/USERGUIDE.html#programming-by-contract)
 
 - En Scala, podrían usarse los mecanismos del lenguaje disponibles en [Predef.scala](https://www.scala-lang.org/api/2.13.6/scala/Predef$.html), como por ejemplo: `assert`, `assume`, `require`, `ensuring`, etc.
 
@@ -156,20 +156,18 @@ Implementar un ejemplo de procesamiento de streams de eventos asíncronos emplea
 
 |   | Lenguaje  | Bloque I OBJETOS  | Bloque II DEPENDENCIAS  | Bloque III CALIDAD  | Bloque IV FUNCIONAL Y ASINC |
 |---|---|---|---|---|---|
-| [SANCHIDRIÁN HERRERA, PABLO](https://github.com/PaulSanHerr)  | TypeScript  | [Herencia](temas/herencia/typescript/)  | [Anotaciones](temas/anotaciones/typescript/)  | [Undefined](temas/undefined/typescript/) | [Arrow functions](temas/lambdas/typescript/) |
+| [SANCHIDRIÁN HERRERA, PABLO](https://github.com/PaulSanHerr)  | TypeScript  | Herencia  | Anotaciones  | Undefined | Arrow functions |
 |   |   |   |   |   |   |
-| [SAUCEDO GARCÍA, JUAN MANUEL](http://github.com/juanmanuelsaucedo)  | C++, Java  | [Unión (C++)](temas/uniones/cpp/)  | Aspectos (Java)  | [Undefined (C++)](temas/undefined/cpp/) | Observables (C++) |
+| [SAUCEDO GARCÍA, JUAN MANUEL](http://github.com/juanmanuelsaucedo)  | C++, Java  | Unión (C++)  | Aspectos (Java)  | Undefined (C++) | Observables (C++) |
 |   |   |   |   |   |   |
-| [ROBLES SORROCHE, LUIS](http://github.com/luisroblessorroche)        |   Python   |  [Delegación](temas/delegacion/python/) |  [Inyección](temas/inyeccion/python/)  | [Undefined](temas/undefined/python/) | [Observables](temas/observables/python/) |
+| [ROBLES SORROCHE, LUIS](http://github.com/luisroblessorroche)        |   Python   |  Delegación  |  Inyecciones  | Undefined | Observables |
 |   |   |   |   |   |   |
-| [VÁZQUEZ SÁEZ, MARÍA](http://github.com/mariavazquezss) | C#, Java, C++ | [Herencia(C#)](temas/herencia/csharp/)  | [Inyección (Java)](temas/inyeccion/java-di-spring/)  | [Contratos(valid4j)](temas/contratos/java-valid4j/) | [Promesas y Futuros (C++)](temas/futuros/cpp/) |
+| [VÁZQUEZ SÁEZ, MARÍA](http://github.com/mariavazquezss) | C#,Java, C++ | [Herencia(C#)](temas/herencia/csharp/)  | Inyección(Java)  | [Contratos(valid4j)](temas/contratos/java-valid4j/) | Promesas y Futuros(C++) |
 |   |   |   |   |   |   |
-| [BERNAL PÉREZ, FRANCISCO JOSÉ](http://github.com/FcoJoseBernalPerez)|   C#, Python, Java, C++   |  [Delegación(C#)](temas/delegacion/csharp/)  |  [Aspectos(Python)](temas/aspectos/python/)  | [Contratos(Java)](temas/contratos/java-cofoja/) | [Lambdas (C++)](temas/lambdas/cpp1/) |
+| [BERNAL PÉREZ, FRANCISCO JOSÉ](http://github.com/FcoJoseBernalPerez)|   C#,Python,Java,C++   |  Delegación(C#)  |  Aspectos(Python)  | Contratos(Java) | Lambdas(C++) |
 |	|	|	|	|	|	|
-| [VELO HUERTA, CRISTÓBAL JOSÉ](http://github.com/CJVH-UCA)| Python, Java | [Herencia(Python)](temas/herencia/python/) | Aspectos(Java con Guice) | [Contratos(Python)](temas/contratos/python/) | [Lambdas(Python)](temas/lambdas/python/) |
+| [VELO HUERTA, CRISTÓBAL JOSÉ](http://github.com/CJVH-UCA)| Python | Herencia | Aspectos | Contratos | Lambda |
 |  |  |  |  |  |  |
-| [PÉREZ MERCADO, RUBÉN](http://github.com/rubenperezm)| Kotlin | [Herencia](temas/herencia/kotlin) | [Anotaciones](temas/anotaciones/kotlin) | [Null Safety](temas/undefined/kotlin) | [Lambdas](temas/lambdas/kotlin) |
+| [PÉREZ MERCADO, RUBÉN](http://github.com/rubenperezm)| Kotlin | Herencia | Anotaciones | Null Safety | Lambdas |
 |  |  |  |  |  |  |
-| [LOIZ JORDAN, CARLOS](https://github.com/carlosloiz97)| C# | [Herencia](temas/herencia/csharp/) | [Inyección](temas/inyeccion/csharp/) | [Contratos](temas/contratos/csharp/) | [Lambdas](temas/lambdas/csharp/) |
-|  |  |  |  |  |  |
-| [CARO BARRERA, LUCÍA](https://github.com/luciacarobar)| Python, Java, Scala y C++ | [Encapsulación (Python)](temas/encapsulacion/python/) | [Inyección (Java)](temas/inyeccion/java-di-guice/) | [Contratos (Scala)](temas/contratos/scala/) | [Lambdas (C++)](temas/lambdas/cpp2/) |
+| [LOIZ JORDAN, CARLOS](https://github.com/carlosloiz97)| C# | Herencia | Inyección | Contratos | Lambdas |
