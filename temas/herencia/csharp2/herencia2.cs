@@ -1,13 +1,3 @@
-# Herencia
-
-Autor : Carlos Loiz Jordán.
-
-# Consejos
-
-Tener extensiones de C++ y csharp si usas vs code para programarlo ya que hace que sea todo mas facil y sencillo.
-
-# Código 1
-
 public class Personal {
     private int _id;
     private string _nombre;
@@ -46,8 +36,3 @@ class Program {
         Console.WriteLine(_profesor.id , _profesor.nombre);
     }
 }
-
-# Explicación 
-Para el otro tipo de herencia mirar codigo.
-Diferentes tipos de herencias con C#
-

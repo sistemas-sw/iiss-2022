@@ -2,7 +2,7 @@ using System;
 public class ejeploDelegate  {
 
    // Declara un delegado para un método que recibe un int y devuelve una cadena.
-   public delegate string delegate( int aux );
+   public delegate string delegate_( int aux );
 
 
    public class delegateClass  {
@@ -26,8 +26,8 @@ public class ejeploDelegate  {
 
       // Crea un delegate para cada método
       delegateClass dgClass = new delegateClass();
-      delegate var = new delegate( dgClass.mostrarString );
-      delegate var2 = new delegate( delegateClass.mostarOperacion );
+      delegate_ var = new delegate_( dgClass.mostrarString );
+      delegate_ var2 = new delegate_( delegateClass.mostarOperacion );
 
       Console.WriteLine( 5, var( 5 ), var2( 5 ) );
       Console.WriteLine( -3, var( -3 ), var2( -3 ) );
