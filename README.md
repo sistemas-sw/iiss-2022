@@ -14,6 +14,15 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
    - [Ruby](https://www.ruby-lang.org/)
    - Cualquier otro lenguaje que tenga un mecanismo útil de implementación para el tema en cuestión y el ejemplo propuesto
 2. Proponer un ejemplo a implementar, bien similares a los estudiados en teoría, bien propuestos por el estudiante. 
+   - Colocad el ejemplo que implementéis en una carpeta con el nombre del lenguaje que hayáis elegido. Por ejemplo:
+      - `csharp`
+      - `lua`
+      - `kotlin`
+      - `python`
+      - `typescript`
+      - `ruby`
+      - `scala`
+      - `swift`
 3. Implementar cada ejemplo empleando los mecanismos del lenguaje elegido.
    - Incluir una breve explicación escrita en [markdown](https://en.wikipedia.org/wiki/Markdown), que incluya instrucciones sobre cómo construir, compilar y ejecutar el ejemplo.
    - Incluir en el código un programa principal breve de demostración del ejercicio.
@@ -30,7 +39,7 @@ Los ejemplos serán similares a los estudiados en teoría, u otros alternativos 
      - `asincrono`,
      - `observables`.
 4. Publicar los ejemplos en un repositorio
-   - Hacer un fork de este repositorio e invitar al profesor al nuevo repo
+   - Hacer un fork de este repositorio y notificar al profesor por correo sobre el nuevo repo, para que pueda actuar como _watcher_.
    - Todos los ficheros deben estar realizados sobre carpetas cuyos nombres coincidan con los nombres de los [temas](#temas) elegidos.
    - Cada ejemplo en cada carpeta debe incluir un fichero `README.md` con las instrucciones en markdown, desde las que se enlace a:
      - el código implementado
