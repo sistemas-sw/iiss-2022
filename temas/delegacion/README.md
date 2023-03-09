@@ -61,3 +61,5 @@ driver = Driver.new
 car = Car.new(driver)
 car.drive # Output: "I'm driving the car!"
 ```
+
+# Errores con nil
