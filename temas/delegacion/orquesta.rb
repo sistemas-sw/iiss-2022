@@ -12,7 +12,7 @@ module Orquesta
     def initialize
         @instrumentos = []
     end
-  
+
     def tocar
         each(&:tocar)
     end
