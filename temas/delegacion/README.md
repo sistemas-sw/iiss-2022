@@ -45,6 +45,6 @@ Por ello, hay que comprobar siempre si un objeto es nil.
 ```ruby
 def tocar
         @instrumentos.each { |i| i.tocar unless i.nil? }
-      end
+end
 ```
 
