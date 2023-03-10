@@ -29,7 +29,7 @@ public class circulo
         public String Nombre
         {
             get { return nombre; }
-            set { return nombre; }
+            set { nombre = value; }
         }
 }
 
@@ -40,8 +40,10 @@ namespace Application
     {
         public static void Main(string[] args)
         {
-            double radio = 5.0;
-            circulo c = new circulo(radio);
+            circulo c = new circulo {radio = 5.0};
+       
+            c.nombre = "circulo1";
+            
 
             Console.WriteLine("El área del círculo es: {0}", c.Area());
             Console.WriteLine("El perímetro del círculo es: {0}", c.Perimetro());
