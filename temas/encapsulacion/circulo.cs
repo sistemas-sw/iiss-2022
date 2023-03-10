@@ -4,6 +4,7 @@ using System;
 public class circulo
 {
         private double radio;
+        private String nombre;
 
         public circulo(double radio)
         {
@@ -22,8 +23,13 @@ public class circulo
 
         public double Radio
         {
-            get { return radio; }
-            set { radio = value; }
+            get { return radio; init; }
+        }
+        
+        public String Nombre
+        {
+            get { return nombre; }
+            set { return nombre; }
         }
 }
 
