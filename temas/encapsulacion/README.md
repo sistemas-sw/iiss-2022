@@ -54,7 +54,7 @@ public static void Main(string[] args)
             try {
                 c.Nombre = "circulo";
             }
-            catch (Exception e) { Console.WriteLine(e.Message); // Imprime "Error, usa un nombre más significativo" }
+            catch (Exception e) { Console.WriteLine(e.Message); } // Imprime "Error, usa un nombre más significativo"
                 
             Console.WriteLine("El nombre del circulo es: {0}", c.Nombre);
             Console.WriteLine("El área del círculo es: {0}", c.Area());
