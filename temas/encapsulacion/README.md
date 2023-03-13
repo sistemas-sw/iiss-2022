@@ -5,10 +5,11 @@ La encapsulación consiste en proteger los datos y garantizar que se acceda a el
 
 ### get
 
-
-
+Se utiliza para definir un método de ...(getter) ....
 
 ### set
+
+Se utiliza para definir un método de modificación (setter) para una propiedad.
 
 
 ## init
