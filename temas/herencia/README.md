@@ -14,7 +14,7 @@ public override void Luchar() { Console.WriteLine("¡Luchando como un héroe!");
 + virtual: se usa en una clase base para indicar que un método puede ser reemplazado en una clase derivada utilizando la palabra clave override.
 ```C#
 public virtual void Luchar() { Console.WriteLine("¡Luchando!"); }
-
+```
 
 ### Compilacion:
 
