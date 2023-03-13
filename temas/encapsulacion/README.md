@@ -46,10 +46,10 @@ Esto es así porque le damos de nombre al círculo "circulo1", y luego intentamo
 
 ```java
 public static void Main(string[] args)
-        {
-            circulo c = new circulo(5.0);
+{
+        circulo c = new circulo(5.0);
        
-            c.nombre = "circulo1";
+        c.nombre = "circulo1";
 
             try
             {
@@ -63,6 +63,6 @@ public static void Main(string[] args)
             Console.WriteLine("El nombre del circulo es: {0}", c.Nombre);
             Console.WriteLine("El área del círculo es: {0}", c.Area());
             Console.WriteLine("El perímetro del círculo es: {0}", c.Perimetro());
-        }
+}
 ```
 
