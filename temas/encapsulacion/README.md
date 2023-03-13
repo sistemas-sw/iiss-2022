@@ -44,4 +44,25 @@ El perímetro del círculo es: 31,4159265358979
 ```
 Esto es así porque le damos de nombre al círculo "circulo1", y luego intentamos darle de nombre "circulo" pero no cumple con la condición del set, por lo que se lanza una excepción. Finalmente, usamos el get del nombre y los métodos del área y el perímetro.
 
+```java
+public static void Main(string[] args)
+        {
+            circulo c = new circulo(5.0);
+       
+            c.nombre = "circulo1";
+
+            try
+            {
+                c.Nombre = "circulo";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message); // Imprime "Error, usa un nombre más significativo"
+            }
+                
+            Console.WriteLine("El nombre del circulo es: {0}", c.Nombre);
+            Console.WriteLine("El área del círculo es: {0}", c.Area());
+            Console.WriteLine("El perímetro del círculo es: {0}", c.Perimetro());
+        }
+```
 
