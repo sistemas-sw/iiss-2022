@@ -19,6 +19,6 @@ Enlace oficial: https://dotnet.microsoft.com/es-es/
 
 Comandos para ejecutar el programa una vez instalado:
 
+```console
 csc aventura.cs
-
 mono aventura.exe
