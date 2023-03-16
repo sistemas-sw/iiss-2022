@@ -42,3 +42,5 @@ javac -cp ./org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar main.j
 ```
 
 Fin
+
+>>>>>>> c8bb6efde7a8c7ce262b18710e6ebcbc25a99c54
