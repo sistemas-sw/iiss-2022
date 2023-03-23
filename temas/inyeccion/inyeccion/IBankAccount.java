@@ -1,4 +1,4 @@
-package versionFinal;
+package inyeccion;
 
 public interface IBankAccount {
     String getId();

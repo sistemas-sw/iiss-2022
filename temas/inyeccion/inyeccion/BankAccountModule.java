@@ -1,4 +1,4 @@
-package versionFinal;
+package inyeccion;
 
 import com.google.inject.AbstractModule;
 

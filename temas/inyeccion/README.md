@@ -1,74 +1,99 @@
 
-# Inyeccion en Java con Guice
+# Inyeccion de dependencias con Guice
 
-## Instalacion
+Guice es un framework de inyección de dependencias para Java que permite la creación y gestión automática de objetos y sus dependencias. En la inyección de dependencias con Guice, se define cómo se crearán y gestionarán las instancias de las clases y sus dependencias.
 
-Creo un proyecto en Maven con:
+La inyección de dependencias con Guice se basa en la idea de que las clases no deben crear o gestionar sus propias dependencias. En su lugar, estas dependencias se proporcionan a través de constructores, métodos o campos anotados con "@Inject". Guice se encarga de resolver estas dependencias y proporcionar las instancias adecuadas de los objetos.
 
-```console
-mvn archetype:generate
+El proceso de inyección de dependencias con Guice se realiza en tiempo de ejecución, lo que significa que las dependencias se pueden cambiar fácilmente sin tener que modificar el código fuente. Además, Guice proporciona un sistema de ámbito que permite controlar el ciclo de vida de las instancias de objetos y sus dependencias.
+
+## BankAccountComparatorById
+
++ He añadido @Inject y he creado un constructor
+
+```Java
+class BankAccountComparatorById implements Comparator<BankAccount> {
+    // cambiado
+    @Inject
+    public BankAccountComparatorById() {
+    }
+    
+    public int compare(BankAccount o1, BankAccount o2) {
+        return o1.getId().compareTo(o2.getId());
+    }
+}
 ```
 
-Dentro de pom.xml meto las dependencias:
+## BankAccountModule
 
-```xml
-<dependency>
-    <groupId>com.google.inject</groupId>
-    <artifactId>guice</artifactId>
-    <version>4.2.3</version>
-</dependency>
-```
-
-Instalo las dependencias:
-
-```console
-cd ./temas/inyeccion
-mvn install
-```
-
-Busco el .jar:
-
-```console
-cd ~/.m2/repository/
-find . -name "*guice*.jar" -exec sh -c "unzip -l '{}' | grep -q 'guice'" \; -print
-./org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
-```
-
-Ejecuto:
-
-```console
-cd ./1-backend/src/main/java/1
-javac -cp ./org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar main.java
-```
-
-Fin
-
->>>>>>> c8bb6efde7a8c7ce262b18710e6ebcbc25a99c54
++ He creado un modulo de Guice que proporcione una instancia de BankAccount a la clase BankAccountComparatorById.
++ El modulo hereda de AbstractModule, que es un modulo de Guice.
++ En Java, "bind" se refiere a la vinculación de un objeto o propiedad de un objeto a otro objeto o propiedad, lo que significa que cualquier cambio en el objeto o propiedad vinculado se reflejará en el objeto o propiedad que se vinculó.
 
 
-
-Para inyectar una dependencia a una clase usando Guice, primero necesitas crear un módulo de Guice. Este módulo es responsable de configurar las dependencias y definir cómo se deben inyectar en las clases. Para hacerlo, sigue los siguientes pasos:
-
-Crea una clase que extienda AbstractModule, que es una clase de Guice. Esta clase debe ser capaz de proporcionar todas las dependencias que se necesitan.
-Sobrescribe el método configure() en esta clase. Este método es el punto de entrada para definir todas las dependencias.
-Dentro del método configure(), usa el método bind() para asociar una implementación de una interfaz o clase abstracta con una implementación concreta. Por ejemplo, para asociar la interfaz MyInterface con la clase MyImplementation, se puede usar el siguiente código:
-scss
-Copy code
-bind(MyInterface.class).to(MyImplementation.class);
-Si la clase a la que se quiere inyectar una dependencia es una clase externa, se puede usar la anotación @Inject en su constructor para indicar que se deben inyectar ciertas dependencias. Por ejemplo:
-kotlin
-Copy code
-public class MyClass {
-  private final MyDependency myDependency;
-  
-  @Inject
-  public MyClass(MyDependency myDependency) {
-    this.myDependency = myDependency;
+```java
+public class MyModule extends AbstractModule {
+  @Override
+  protected void configure() {
+    // Bind IBankAccount to BankAccount.
+    bind(IBankAccount.class).to(BankAccount.class);
+    
+    // Bind BankAccountComparatorById.
+    bind(BankAccountComparatorById.class);
   }
 }
-Finalmente, crea una instancia de Injector, que es una clase de Guice que se encarga de crear y proporcionar todas las dependencias. Para hacerlo, puedes usar el siguiente código:
-vbnet
-Copy code
-Injector injector = Guice.createInjector(new MyModule());
-MyClass myClass = injector.getInstance(MyClass.class);
-En este ejemplo, MyModule es la clase que defines para configurar todas las dependencias, y MyClass es la clase que quieres inyectar con dependencias. El método getInstance() del Injector se encarga de crear una instancia de la clase MyClass con todas las dependencias inyectadas.
+```
+
+## BankAccount
+
++ He añadido un atributo que es objeto IBankAccount.
++ En el constructor he cambiado que reciba un objeto IBankAccount.
+
+```java
+public final class BankAccount implements Comparable<BankAccount> {
+    // anadido IBankAccount
+    private final String id;
+    private final IBankAccount account;
+    private LocalDate creationDate;
+    private Comparator comparator;
+
+    // cambiado
+    @Inject
+    public BankAccount(IBankAccount bankAccount) {
+        this.id = bankAccount.getId();
+        comparator = new BankAccountComparatorById();
+    }
+
+    /...
+}
+```
+
+## IBankAccount
+
++ He creado una interfaz para BankAccount, IBankAccount.
+
+```java
+public interface IBankAccount {
+    String getId();
+}
+```
+
+## Main
+
++ He creado una clase main donde hay una instancia de Injector que use su método getInstance() para obtener una instancia de BankAccountComparatorById con la dependencia de BankAccount inyectada.
++ He creado dos objetos BankAccount y los comparo metiendo en una variable result si son o no iguales.
+
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new MyModule());
+        BankAccountComparatorById comparator = injector.getInstance(BankAccountComparatorById.class);
+        
+        // Use the comparator.
+        BankAccount account1 = new BankAccount("123");
+        BankAccount account2 = new BankAccount("456");
+        int result = comparator.compare(account1, account2);
+    }
+}
+```

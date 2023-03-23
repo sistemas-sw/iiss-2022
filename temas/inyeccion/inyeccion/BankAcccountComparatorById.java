@@ -1,10 +1,7 @@
-package versionFinal;
-import BankAccount;
+package inyeccion;
 
 import java.util.*;
 import com.google.inject.Inject;
-
-package versionFinal;
 
 class BankAccountComparatorById implements Comparator<BankAccount> {
     // cambiado
