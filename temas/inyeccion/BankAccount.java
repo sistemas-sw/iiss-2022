@@ -1,17 +1,19 @@
 
-import java.util.*;
-import java.io.*;
+
 import java.time.*;
+import java.util.*;
 
 public final class BankAccount implements Comparable<BankAccount> {
   private final String id;
   private LocalDate creationDate;
   private Comparator comparator;
 
-  public BankAccount(String number) {
+
+  public BankAccount(String number, BankAccountComparatorById comparator) {
     this.id = number;
-    comparator = new BankAccountComparatorById();
+    this.comparator = comparator;
   }
+  
 
   public LocalDate getCreationDate() {
     return creationDate;
