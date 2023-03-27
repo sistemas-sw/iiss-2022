@@ -1,7 +1,3 @@
-package anotaciones;
-
-import java.util.*;
-import java.io.*;
 import java.time.*;
 
 public final class BankAccount implements Comparable<BankAccount> {

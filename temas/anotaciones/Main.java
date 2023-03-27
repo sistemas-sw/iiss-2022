@@ -1,5 +1,3 @@
-package anotaciones;
-
 import java.time.LocalDate;
 
 public class Main {
