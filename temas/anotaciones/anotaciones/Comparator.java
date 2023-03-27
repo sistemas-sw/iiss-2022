@@ -8,7 +8,6 @@ import java.lang.annotation.Target;
 
 @Retention(RUNTIME)
 @Target({ FIELD })
-public @interface Comparator
-{
-  String value();
+public @interface Comparator {
+    Class<? extends ComparatorInterface> value() default BankAccountComparatorById.class;
 }

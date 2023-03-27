@@ -8,8 +8,8 @@ public final class BankAccount implements Comparable<BankAccount> {
   private final String id;
   private LocalDate creationDate;
 
-  @comparator("com.example.BankAccountComparatorById")
-  private Comparator<BankAccount> comparator;
+  @Comparator
+  private ComparatorInterface comparator;
 
   public BankAccount(String number) {
     this.id = number;
@@ -28,7 +28,7 @@ public final class BankAccount implements Comparable<BankAccount> {
     return id;
   }
 
-  public void setComparator(Comparator<BankAccount> cmp) {
+  public void setComparator(ComparatorInterface cmp) {
     comparator = cmp;
   }
 
