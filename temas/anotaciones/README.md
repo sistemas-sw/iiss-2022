@@ -21,18 +21,16 @@ import java.lang.annotation.Target;
 public @interface Comparator {
     Class<? extends ComparatorInterface> value() default BankAccountComparatorById.class;
 }
-
-
 ```
 
 ## BankAccount.java
 
 BankAccount que representa una cuenta bancaria con un identificador único y una fecha de creación. La clase implementa la interfaz Comparable, lo que significa que se puede comparar una instancia de BankAccount con otra instancia de la misma clase.
 
-La clase también define una anotación @Comparator que se utiliza para especificar qué implementación de ComparatorInterface debe utilizarse para comparar las instancias de BankAccount. La anotación tiene un valor predeterminado que es una implementación de BankAccountComparatorById.
+La clase también define una anotación @Comparator que se utiliza para especificar qué implementación de ComparatorInterface debe utilizarse para comparar las instancias de BankAccount.
 
-+ He agregado la anotacion personalizada al atributo comparator con @Comparator private ComparatorInterface comparator;
-+ En el constructor, el objeto BankAccount se construye con un id que es el identificador que se usa para saber si dos cuentas de banco son iguales. Al construirlo, al atributo comparator le asigno un objeto de la clase BankAccountComparatorById.
++ He agregado la anotacion personalizada al atributo comparator con @Comparator (BankAccountComparatorByCreationDate.class) private ComparatorInterface comparator;;
++ En el constructor, el objeto BankAccount se construye con un id que es el identificador que se usa para saber si dos cuentas de banco son iguales.
 + Se usa la anotación @Comparator para especificar qué implementación del comparador debe usarse para inyectar la dependencia en tiempo de ejecución. En este caso, la implementación concreta es BankAccountComparatorById.
 
 ```java
@@ -40,19 +38,20 @@ public final class BankAccount implements Comparable<BankAccount> {
   private final String id;
   private LocalDate creationDate;
 
-  @Comparator
+  @Comparator(BankAccountComparatorByCreationDate.class)
   private ComparatorInterface comparator;
 
   public BankAccount(String number) {
     this.id = number;
-    comparator = new BankAccountComparatorById();
   }
+  //...
+}
 ```
 
 ```java
 public void setComparator(ComparatorInterface cmp) {
     comparator = cmp;
-  }
+}
 ```
 
 ## ComparatorInterface.java
@@ -78,10 +77,35 @@ public class BankAccountComparatorById implements ComparatorInterface {
 }
 ```
 
+## BankAccountComparatorByCreationDate
++ La clase BankAccountComparatorByCreationDate es una implementación de ComparatorInterface que compara dos instancias de BankAccount basándose en sus fechas de creación.
+
+```java
+public class BankAccountComparatorByCreationDate implements ComparatorInterface {
+  @Override
+  public int compare(BankAccount bankAccount, BankAccount other) {
+      return bankAccount.getCreationDate().compareTo(other.getCreationDate());
+  }
+}
+
+```
+
 
 ## Main.java
 
-La clase Main contiene un método main que crea dos objetos de BankAccount y las compara utilizando el método compareTo(). La implementación de ComparatorInterface utilizada para la comparación se especifica mediante la anotación @Comparator en la clase BankAccount. El resultado de la comparación se imprime en la consola.
+La clase Main contiene un método main que crea dos objetos de BankAccount y las compara utilizando el método compareTo(). La implementación de ComparatorInterface utilizada para la comparación se inyecta y el resultado de la comparación se imprime en la consola.
+
+```java
+// Inyectar un comparador diferente a BankAccountComparatorById
+account1.setComparator(new BankAccountComparatorByCreationDate());
+
+// Comparing two BankAccount objects using the ComparatorInterface implementation
+int result = account1.compareTo(account2);
+
+// Changing the comparator to BankAccountComparatorById
+account1.setComparator(new BankAccountComparatorById());
+result = account1.compareTo(account2);
+```
 
 # Compilar y ejecutar
 

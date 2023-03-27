@@ -4,12 +4,11 @@ public final class BankAccount implements Comparable<BankAccount> {
   private final String id;
   private LocalDate creationDate;
 
-  @Comparator
+  @Comparator(BankAccountComparatorByCreationDate.class)
   private ComparatorInterface comparator;
 
   public BankAccount(String number) {
     this.id = number;
-    comparator = new BankAccountComparatorById();
   }
 
   public LocalDate getCreationDate() {
