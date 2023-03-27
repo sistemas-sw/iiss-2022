@@ -121,7 +121,8 @@ java Main
 
 Resultado de ejecutar:
 ```console
-account1: 123
-account2: 456
-account1 is less than account2
+account1: 123 2022-03-27
+account2: 456 2021-01-01
+By creation date: account1 is greater than account2
+By id: account1 is less than account2
 ```
