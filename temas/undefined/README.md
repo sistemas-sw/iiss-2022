@@ -44,7 +44,7 @@ class ScreenResolution {
 
 Hago lo mismo con DisplayFeatures y Mobile.
 
-# MobileService
+## MobileService
 
 En la clase MobileService compruebo si son nulas o no con has_value(), y si alguna es nula devuelvo un cero, si no, devuelvo el ancho por el alto.
 
