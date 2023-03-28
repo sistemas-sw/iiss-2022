@@ -95,7 +95,10 @@ Ejecutar:
 java MyApp
 ```
 
+Salida del programa:
+```console
 LoggingAspect: setP1 was called.
 LoggingAspect: setP2 was called.
 LoggingAspect: setX was called.
 LoggingAspect: setY was called.
+```
