@@ -64,7 +64,7 @@ public class MyAppModule extends AbstractModule {
 }
 ```
 
-#### MyApp.java
+### MyApp.java
 
 Creamos una instancia de la clase "Injector" de Guice y la usamos para obtener instancias de "Line" y "Point" con el aspecto de intercepción aplicado.
 
