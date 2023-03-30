@@ -1,6 +1,6 @@
 # Aspectos
 
-Los aspectos en Java sirven para separar la aplicación de las preocupaciones tales como el registro, la seguridad o el control de errores. En vez de escribir el código de la preocupación transversal en varios lugares de la aplicación, se escribe un solo código que se llama aspecto y se aplica a varias partes de la aplicación.
+Los aspectos en Java sirven para separar la aplicación de los asuntos tales como el registro, la seguridad o el control de errores. En vez de escribir ese código en varios lugares de la aplicación, se escribe un solo código que se llama aspecto y se aplica a varias partes de la aplicación.
 
 La intercepción de métodos es una forma de implementar aspectos. Consiste en interceptar la llamada a un método antes o después de su ejecución, y realizar alguna acción adicional. En Java, esto se puede hacer utilizando bibliotecas de inyección de dependencias como Guice.
 
