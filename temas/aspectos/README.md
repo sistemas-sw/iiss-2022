@@ -31,22 +31,15 @@ Luego creamos una clase de aspecto que implemente el código de intercepción qu
 Esta clase extiende la clase "AbstractModule" de Guice y utiliza el método "bindInterceptor" para registrar el código de intercepción. La primera llamada al método "Matchers.any()" especifica que cualquier clase puede ser interceptada, mientras que la segunda llamada al método "Matchers.annotatedWith(Interceptor.class)" especifica que solo se deben interceptar los métodos marcados con la anotación "Interceptor". El método de intercepción en sí imprime el nombre del método que se está llamando y luego llama al método "proceed()" para continuar con la ejecución normal del método.
 
 ```java
-public class LoggingAspect extends AbstractModule {
-  @Override
-  protected void configure() {
-    bindInterceptor(
-      Matchers.any(),
-      Matchers.annotatedWith(Interceptor.class),
-      invocation -> {
-        Method method = invocation.getMethod();
-        System.out.println(
-          "LoggingAspect: " + method.getName() + " was called."
-        );
-        return invocation.proceed();
-      }
-    );
+public class LoggingAspect implements MethodInterceptor {
+ @Override 
+  public Object invoke(MethodInvocation invocation) throws Throwable {
+    String methodName = invocation.getMethod().getName();
+    System.out.println("LoggingAspect: " + methodName + " was called.");
+    return invocation.proceed();
   }
 }
+
 ```
 
 ### MyAppModule.java
@@ -59,7 +52,11 @@ public class MyAppModule extends AbstractModule {
   protected void configure() {
     bind(Line.class);
     bind(Point.class);
-    bindInterceptor(LoggingAspect.class);
+    bindInterceptor(
+      Matchers.any(),
+      Matchers.annotatedWith(Interceptor.class),
+      new LoggingAspect() // Aquí se usa la instancia de LoggingAspect
+    );
   }
 }
 ```
