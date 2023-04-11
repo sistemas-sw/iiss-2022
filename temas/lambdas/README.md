@@ -7,7 +7,6 @@ Son muy útiles cuando se necesitan funciones simples y pequeñas que se puedan 
 Estructura:
 
 ```scss
-Copy code
 [Capturas] (Parámetros) -> TipoRetorno {
     // Cuerpo de la función
 }
@@ -26,7 +25,6 @@ Hay varios tipos de funciones lambda, según su capacidad de captura de variable
 Son funciones lambda que no capturan ninguna variable del entorno en el que se definen. Tienen la siguiente sintaxis:
 
 ```cpp
-Copy code
 []() {
     // Cuerpo de la función lambda
 }
@@ -49,7 +47,6 @@ int main() {
 Son funciones lambda que capturan variables del entorno por valor, lo que significa que obtienen una copia de la variable en el momento de la definición de la lambda. Tienen la siguiente sintaxis:
 
 ```cpp
-Copy code
 [valor1, valor2]() {
     // Cuerpo de la función lambda
 }
@@ -73,7 +70,6 @@ int main() {
 Son funciones lambda que capturan variables del entorno por referencia, lo que significa que obtienen una referencia a la variable original en el entorno en el momento de la definición de la lambda. Tienen la siguiente sintaxis:
 
 ```cpp
-Copy code
 [&referencia1, &referencia2]() {
     // Cuerpo de la función lambda
 }
@@ -99,7 +95,6 @@ int main() {
 Son funciones lambda que capturan variables del entorno por referencia constante, lo que significa que obtienen una referencia constante a la variable original en el entorno en el momento de la definición de la lambda. Tienen la siguiente sintaxis:
 
 ```cpp
-Copy code
 [&referencia_const1, &referencia_const2]() {
     // Cuerpo de la función lambda
 }
@@ -124,7 +119,6 @@ int main() {
 Son funciones lambda que capturan variables del entorno por movimiento, lo que significa que obtienen la propiedad de la variable original en el entorno en el momento de la definición de la lambda. Tienen la siguiente sintaxis:
 
 ```cpp
-Copy code
 [valor_movido1, valor_movido2]() {
     // Cuerpo de la función lambda
 }
@@ -151,7 +145,6 @@ int main() {
 Son funciones lambda que permiten modificar las variables capturadas por valor, aunque la función lambda sea constante. Se utiliza la palabra clave "mutable" para indicar que se permite la modificación de las variables capturadas por valor. Tienen la siguiente sintaxis:
 
 ```cpp
-Copy code
 [valor1, valor2]() mutable {
     // Cuerpo de la función lambda
 }
@@ -192,7 +185,6 @@ std::cout << "Resultado de lambda genérica: " << lambda_generic(3, 5) << std::e
 Una función lambda variádica en C++ es una función anónima que puede aceptar un número variable de argumentos de diferentes tipos. Esto se logra utilizando la sintaxis auto... en la lista de parámetros de la función lambda, lo que permite que la función lambda acepte un número variable de argumentos, y luego usar el operador de desplegado ... para expandir y procesar los argumentos dentro del cuerpo de la lambda. Tienen la siguiente sintaxis:
 
 ```scss
-Copy code
 auto lambda_variadic = [](auto... args) {
     // Cuerpo de la lambda
 };
