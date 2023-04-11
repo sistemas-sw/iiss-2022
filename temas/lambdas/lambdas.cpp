@@ -56,7 +56,7 @@ int main() {
     std::cout << "x después de ejecutar la lambda: " << x << std::endl; // Imprime 10
 
     // genérica
-    auto lambda_generic = [](int x, int y) { return x + y; };
+    auto lambda_generic = [](auto x, auto y) { return x + y; };
     std::cout << "Resultado de lambda genérica: " << lambda_generic(3, 5) << std::endl;
 
     // variádica
