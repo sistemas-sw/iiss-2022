@@ -176,7 +176,7 @@ auto lambda_generic = [](auto parametro1, auto parametro2, ...) {
 ```
 
 ```cpp
-auto lambda_generic = [](int x, int y) { return x + y; };
+auto lambda_generic = [](auto x, auto y) { return x + y; };
 std::cout << "Resultado de lambda genérica: " << lambda_generic(3, 5) << std::endl;
 ```
 
