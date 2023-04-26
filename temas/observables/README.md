@@ -7,6 +7,7 @@ Cpp es una biblioteca C++ que implementa ReactiveX, que permite el procesamiento
 ## Instalar RxCpp
 
 He entrado en el GitHub: https://github.com/ReactiveX/RxCpp
+
 A continuación he descargado la última release: https://github.com/ReactiveX/RxCpp/releases/tag/v4.1.1
 
 He añadido la carpeta RxCpp-4.1.1 para poder ejecutar el programa. Para que funcione, debo incluir el archivo rx.hpp que está en la carpeta src del proyecto.
