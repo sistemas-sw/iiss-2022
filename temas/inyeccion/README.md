@@ -1,5 +1,19 @@
 # Inyección de dependencias
 
+## Construcción
+
+Para la construcción del software usaremos la herramienta maven. Debemos situarnos en la carpeta kotlin, donde se encuentra el pom.xml y ejecutamos:
+
+```bash
+mvn clean package
+```
+
+Posteriormente usamos el siguiente comando, para ejecutar la aplicación
+
+```bash
+mvn exec:java
+```
+
 ## Ejemplo
 
 Para la implementación de la inyección de dependencias en Kotlin usaremos la biblioteca injekt.
