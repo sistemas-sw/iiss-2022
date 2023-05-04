@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "51Sn5F/i4TZr7fR2iKTsfCeoUBdBtI/1n6DoflWldza2udNu6qxzLzqMhqTC91CPKiRWoOxrVLe0i1Nj7Jg0rw==",
+  "success": true,
+  "projectFilePath": "/home/david/Universidad/Rama/IISS/iiss-2023/temas/observables/C#/C#.csproj",
+  "expectedPackageFiles": [
+    "/home/david/.nuget/packages/system.reactive/5.0.0/system.reactive.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
