@@ -1,5 +1,5 @@
 
-# ruby archivo.rb
+# ruby orquesta.rb
 
 class Orquesta
     include Enumerable

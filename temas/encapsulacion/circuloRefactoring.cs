@@ -1,8 +1,12 @@
 using System;
 
+namespace System.Runtime.CompilerServices
+{
+    public static class IsExternalInit {}
+}
+
 namespace Application
 {
-
     public class Circulo
     {
             public double Radio {get; init;}
@@ -40,7 +44,7 @@ namespace Application
     {
         public static void Main(string[] args)
         {
-            circulo c = new circulo(5.0);
+            Circulo c = new Circulo(5.0);
        
             c.Nombre = "circulo1";
 

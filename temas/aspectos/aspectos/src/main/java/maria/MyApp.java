@@ -15,3 +15,4 @@ public class MyApp {
     point.setY(20);
   }
 }
+
