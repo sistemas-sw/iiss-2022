@@ -4,11 +4,7 @@ He hecho refactoring porque he mejorado el código sin cambiar la funcionalidad 
 
 Mejoras:
 
-+ Código innecesario: la siguiente línea era innecesaria porque ya había añadido `namespace System.Runtime.CompilerServices { public static class IsExternalInit {} } `
-
-```css
-using System.Runtime.CompilerServices;
-```
++ Código innecesario: la línea `using System.Runtime.CompilerServices;` era innecesaria porque ya había añadido `namespace System.Runtime.CompilerServices { public static class IsExternalInit {} } `
 
 + Cambio de nombres según la convención Pascal case
     + He cambiado el nombre de la clase circulo por Circulo.
